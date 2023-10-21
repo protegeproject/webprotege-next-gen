@@ -3,7 +3,7 @@
   "info" : {
     "title" : "WebProtégé API",
     "version" : "1.0.0",
-    "description" : "This document describes the asynchronous API for WebProtégé.\n\nThe API uses an async request/response style of interaction.\nTo make a request, a message, which represents the request, is published to a channel.\nThe message payload is an object that describes the request.\nA *kafka_replyTopic* header specifies the channel that the reply message, representing\nthe response, will be delivered to.\n\nIn this document response messages are documented\nusing the name of the published channel suffixed with -Replies.  For example, messages that\nrepresent responses to messages published on the [webprotege.entities.CreateClasses](#operation-publish-webprotege.entities.CreateClasses) channel\nare documented as subscribe operations to the [webprotege.entities.CreateClasses-Replies](#operation-subscribe-webprotege.entities.CreateClasses-Replies) channel.  In\npractice, this channel would have a custom name that reflects the identitiy of the client.  For\nexample, `MyClient-webprotege.entities.CreateClasses-Replies`."
+    "description" : "This document describes the asynchronous API for WebProtégé.\n\nThe API uses an async request/response style of interaction.\nTo make a request, a message, which represents the request, is published to a channel.\nThe message payload is an object that describes the request.\nA *webprotege_replyChannel* header specifies the channel that the reply message, representing\nthe response, will be delivered to.\n\nIn this document response messages are documented\nusing the name of the published channel suffixed with -Replies.  For example, messages that\nrepresent responses to messages published on the [webprotege.entities.CreateClasses](#operation-publish-webprotege.entities.CreateClasses) channel\nare documented as subscribe operations to the [webprotege.entities.CreateClasses-Replies](#operation-subscribe-webprotege.entities.CreateClasses-Replies) channel.  In\npractice, this channel would have a custom name that reflects the identitiy of the client.  For\nexample, `MyClient-webprotege.entities.CreateClasses-Replies`."
   },
   "channels" : {
     "webprotege.application.GetApplicationSettings" : {
@@ -24,11 +24,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -222,11 +222,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -273,11 +273,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -323,11 +323,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -410,11 +410,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -551,11 +551,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -686,11 +686,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that will be echoed in the reply to this message."
               }
@@ -750,11 +750,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -862,11 +862,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -998,11 +998,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -1143,11 +1143,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -1211,11 +1211,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -1310,11 +1310,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -1396,11 +1396,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -1451,11 +1451,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -1565,11 +1565,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -1630,11 +1630,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -1747,11 +1747,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -1830,11 +1830,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -1902,11 +1902,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -2074,11 +2074,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -2143,11 +2143,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -2241,11 +2241,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -2330,11 +2330,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -2414,11 +2414,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -2498,11 +2498,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -2582,11 +2582,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -2660,11 +2660,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -2746,11 +2746,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -2800,11 +2800,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -2889,11 +2889,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -3023,11 +3023,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -3122,11 +3122,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -3406,11 +3406,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -3487,11 +3487,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -3591,11 +3591,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -3673,11 +3673,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -3732,11 +3732,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -3815,11 +3815,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -3927,11 +3927,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -4003,11 +4003,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -4069,11 +4069,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -4140,11 +4140,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -4208,11 +4208,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -4338,11 +4338,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -4453,11 +4453,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -4561,11 +4561,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -4631,11 +4631,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -4697,11 +4697,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -4759,11 +4759,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -4821,11 +4821,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -4889,11 +4889,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -4957,11 +4957,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -5025,11 +5025,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -5083,11 +5083,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -5215,11 +5215,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -5287,11 +5287,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -5359,11 +5359,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -5431,11 +5431,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -5503,11 +5503,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -5571,11 +5571,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -5629,11 +5629,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -5718,11 +5718,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -5786,11 +5786,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -5841,11 +5841,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -5918,11 +5918,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -5999,11 +5999,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -6059,11 +6059,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -6154,11 +6154,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -6223,11 +6223,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -6276,11 +6276,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -6359,11 +6359,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -6413,11 +6413,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -6490,11 +6490,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -6561,11 +6561,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -6665,11 +6665,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -6854,11 +6854,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -6952,11 +6952,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -7028,11 +7028,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -7119,11 +7119,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -7212,11 +7212,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -7309,11 +7309,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -7407,11 +7407,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -7537,11 +7537,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -7626,11 +7626,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -7703,11 +7703,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -7798,11 +7798,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -7894,11 +7894,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -7974,11 +7974,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -8036,11 +8036,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -8112,11 +8112,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -8215,11 +8215,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -8301,11 +8301,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -8358,11 +8358,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -8422,11 +8422,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -8479,11 +8479,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -8547,11 +8547,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -8601,11 +8601,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -8656,11 +8656,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -8711,11 +8711,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -8766,11 +8766,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -8834,11 +8834,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -8903,11 +8903,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -8952,11 +8952,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -9008,11 +9008,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -9065,11 +9065,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -9119,11 +9119,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -9173,11 +9173,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -9234,11 +9234,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -9295,11 +9295,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -9364,11 +9364,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -9418,11 +9418,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -9499,11 +9499,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -9567,11 +9567,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -9615,11 +9615,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -9663,11 +9663,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -9723,11 +9723,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -9786,11 +9786,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -9859,11 +9859,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -9913,11 +9913,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -10003,11 +10003,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -10074,11 +10074,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -10153,11 +10153,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -10213,11 +10213,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -10281,11 +10281,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -10345,11 +10345,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -10413,11 +10413,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -10489,11 +10489,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -10541,11 +10541,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -10607,11 +10607,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -10663,11 +10663,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -10722,11 +10722,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that will be echoed in the reply to this message."
               }
@@ -10769,11 +10769,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -10840,11 +10840,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
@@ -10921,11 +10921,11 @@
                 "type" : "string",
                 "description" : "The JSON Web Token (JWT) value that identifies the Principal (the authorized user"
               },
-              "kafka_replyTopic" : {
+              "webprotege_replyChannel" : {
                 "type" : "string",
                 "description" : "The name of the channel that should be used for the reply to this message."
               },
-              "kafka_correlationId" : {
+              "webprotege_correlationId" : {
                 "type" : "string",
                 "description" : "The correlation id that identifies the request originator for this message"
               }
